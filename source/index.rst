@@ -9,8 +9,9 @@ Welcome to My Introduction to Python's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-   
-   The first class <section_1>
+
+   绪论 <section_0>
+   第一节 <section_1>
 
 
 
