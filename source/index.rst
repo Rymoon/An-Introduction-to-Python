@@ -10,7 +10,7 @@ Welcome to My Introduction to Python's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   The first class <first_class>
+   The first class <section_1>
 
 
 

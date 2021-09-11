@@ -17,7 +17,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'My Introduction to Python'
+project = 'An Introduction to Python'
 copyright = '2021, Rym'
 author = 'Rym'
 
