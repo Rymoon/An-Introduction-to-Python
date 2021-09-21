@@ -1,6 +1,10 @@
 绪论
 ----------
 
+.. toctree::
+
+    /notebook/section_0
+
 本教程是基于教材 *A Primer on Scientific Programming with Python, 5th ed* 设计的，内容关于python编程和科学计算。
 
 用python解决问题
@@ -31,7 +35,11 @@ Git只是一个例子，类似的还有sqlite3（数据库）、re（正则表�
 
     — Alex Martelli
 
+
+
 这听起来没有什么新奇的，似乎只是“动态属性”的另一种描述。而且实现这个功能并不难，在典型的静态语言如c++，你可以通过继承+虚函数、模版、函数重载、void*等等方式实现这种效果，当然它们是做了类型检查了的，只是编程的人不用手动写if-else的检查判断，可以直接调用。
+
+
 
 而Duck type遇到Python的异常处理机制，新的想法就出现了。Python的异常处理语句是这个样子的：
 
@@ -47,7 +55,7 @@ Git只是一个例子，类似的还有sqlite3（数据库）、re（正则表�
     finally:
         always_call()
 
-异常处理顾名思义，处理程序崩溃的状况，输出错误信息，清理现场，或者跳过出错的部分，继续执行。在C++中也有异常，但不作为常规的控制流使用。但在Python中恰恰相反，人们常常就像if-else语句一样使用try-except。人们并不在调用函数前做检查，防止函数失败，而是先执行函数，如果失败，就抛出异常，转到另一个程序分支。事实上，对于使用duck-type的程序，“先运行后检查”的范式才是更自然，更有效率的。这种范式有个名字，EAFP，“Easier to ask for forgiveness than permission”。我们之后会给出一个 `例子 <./_static/_static/assets/section_0/scripts/section_0.ipynb>`_ 。
+异常处理顾名思义，处理程序崩溃的状况，输出错误信息，清理现场，或者跳过出错的部分，继续执行。在C++中也有异常，但不作为常规的控制流使用。但在Python中恰恰相反，人们常常就像if-else语句一样使用try-except。人们并不在调用函数前做检查，防止函数失败，而是先执行函数，如果失败，就抛出异常，转到另一个程序分支。事实上，对于使用duck-type的程序，“先运行后检查”的范式才是更自然，更有效率的。这种范式有个名字，EAFP，“Easier to ask for forgiveness than permission”。我们之后会给出一个 `例子 <./_static/assets/section_0/scripts/section_0.ipynb>`_ 。
 
 """"""""""
 EAFP
@@ -82,6 +90,8 @@ LBYL
     d = {o.group(1):int(o.group(2))}
     print(d)
 
+
+                  
 关于Python
 ============
 
@@ -159,7 +169,7 @@ xxxxxx          xxxxxxxx
 
 Python的一大好处就是程序包的获取有统一的平台，你很容易找到文档、示例，以及使用者社区（国内别用Baidu搜！）。具体到本书，用的最多的是 *scitool3* . 这本教材的内容其实相当丰富，在附录里讲了PDE/ODE Solver，还有嵌入C++ library的方法。这都是非常使用的主题。
 
-数值计算也不是非Python不可。排除手撸C++的大佬，Matlab大概才是（物理类）数值计算的主体，大量的仿真都是基于matlab（语言）。学统计的同学可能更熟悉R。更早一点可学计算语言是Fortran，现在很多学校都不再教授了。和C++相比，更简单易用而且适合并发场景的有Golang。以及Julia，年轻但专为科学计算设计。Julia的社区在PDE/ODE以及神经网络方面的讨论和实现很活跃。搞最优化的大佬Stephen Byod就很推荐Julia语言。
+数值计算也不是非Python不可。排除手撸C++的大佬，Matlab大概才是（物理类）数值计算的主体，大量的仿真都是基于matlab（语言）。学统计的同学可能更熟悉R。更早一点可学计算语言是Fortran，现在很多学校都不再教授了。和C++相比，更简单易用而且适合并发场景的有Golang。以及Julia，年轻但专为科学计算设计。Julia的社区在PDE/ODE以及神经网络方面的讨论和实现很活跃。搞最优化的大佬Stephen Boyd就很推荐Julia语言。
 
 事实上，即使是在python大红大紫的深度学习领域，很多知名程序库也在使用自己的语言（或子语言）。比如Pytorch提供了torchscript，它允许通过装饰器，来让PyTorch代码片段作为torchscript编译（这个说法并不太准确），从而获得更高的性能。
 
